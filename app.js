@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreDisplay = document.querySelector('.score');
     const gameBtn = document.querySelector('.play-game');
     const sound = document.querySelector('.toggle-sound');
+    const instruction = document.querySelector('.instruction-container');
+    instruction.addEventListener('click', handleModal);
     gameBtn.addEventListener('click', startGame);
     const width = 8;
     const cells = [];
@@ -16,28 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let colorDragged, colorReplaced, squareDragged, squareToBeReplaced;
     let score = 0, time = 60, timer = null;
     let gameLoop = null;
-
-    function createTestGrid() {
-        for (let i = 0; i < width * width; i++) {
-            const cell = document.createElement('div');
-            if (i === 0) cell.style.backgroundImage = 'url(images/orange.png)';
-            else if (i === 1 || i === 2 || i === 8)
-                cell.style.backgroundImage = 'url(images/banana.png)';
-            else cell.style.backgroundImage = `url(images/lime${i}.png)`;
-            grid.appendChild(cell);
-            cells.push(cell);
-            cell.setAttribute('draggable', true);
-            cell.setAttribute('id', i);
-
-            cell.addEventListener('dragstart', dragStart);
-            cell.addEventListener('dragover', dragOver)
-            cell.addEventListener('dragenter', dragEnter);
-            cell.addEventListener('dragleave', dragLeave);
-            cell.addEventListener('drop', dragDrop);
-            cell.addEventListener('dragend', dragEnd);
-        }
-    }
-    // createTestGrid()
 
     function createGrid() {
         for (let i = 0; i < width * width; i++) {
@@ -441,6 +421,22 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('.play-game').innerHTML = 'Pause';
             addListners();
             gameOn = true;
+        }
+    }
+
+    function handleModal() {
+        let modal = document.querySelector('.modal');
+        let closeBtn = document.querySelector('.close');
+        modal.style.display = 'block';
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
     }
 })
