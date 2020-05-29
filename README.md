@@ -8,3 +8,4 @@ Crush 3 is an interactive single player game inspired by Candy Crush. There's an
 - CSS
 - HTML
 
+<img src="https://github.com/xdeng9/crush3/blob/master/images/crush3-demo.gif" />
