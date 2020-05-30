@@ -23,15 +23,6 @@ function haveMatch(index) {
         }
         if (count >= 3) return true;
 
-        pos = index + 1;
-        while (pos < cells.length && Math.floor(pos / width) === row) {
-            if (cells[pos].style.backgroundImage === image)
-                count++;
-            else break;
-            pos++;
-        }
-        if (count >= 3) return true;
-
         ...
 
         return false;
