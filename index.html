@@ -12,18 +12,18 @@
 </head>
 <body>
     <div class="menu-container">
-        <h1 id="game-title">Crush 3</h1>
+        <!-- <h1 id="game-title">Crush 3</h1> -->
 
         <div class="menu-top">
+            <div class="play-game hover">Start Game</div>
             <div class="theme-select">
-                <p>Choose A Theme:</p>
+                <p>Choose a Theme:</p>
                 <select name="themes" id="themes">
                     <option value="fruits">Fruits</option>
                     <option value="animals">Animals</option>
                     <option value="pirates">Pirates</option>
                 </select>
             </div>
-            <div class="play-game hover">Start Game</div>
             <div class="instruction-container hover">Instructions</div>
             <div class="toggle-sound hover">Sound Off</div>
             <span class="isDisabled"><a id="bonus-link" target="_blank" href="http://joedeng.me/reversi">Bonus Game</a></span>
@@ -63,6 +63,14 @@
                 </p>
                 <br>
                 <p class="gl">Good luck!</p>
+            </div>
+        </div>
+
+        <div class="game-over-modal">
+            <div class="modal-content-go">
+                <span class="go-close">&times;</span>
+                <p id="game-over-message">
+                </p>
             </div>
         </div>
 
