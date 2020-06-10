@@ -75,6 +75,7 @@ body {
 
 #game-title {
   font-size: 38px;
+  padding-top: 18px;
   background: -webkit-linear-gradient(red, green);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -124,6 +125,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#themes {
+    outline: none;
 }
 
 .hover {
